@@ -5,7 +5,7 @@ import Home from './views/HomeView.vue'
 </script>
 
 <template>
-  <div id="app">
+  <div class="app">
   <header>
   </header>
     <div class="d-flex justify-center align-center flex-column my-10">
@@ -29,7 +29,7 @@ import Home from './views/HomeView.vue'
   </div>
 </template>
 
-<style scoped>
+<style>
 #app {
   font-family: 'Inter', sans-serif;
   color: var(--color-text);
@@ -100,6 +100,15 @@ nav a:first-of-type {
 }
 
 @media (min-width: 1024px) {
+  #app {
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    max-width: 100vw;
+    max-height: 100vh;
+    overflow: hidden;
+    padding: 2px;
+  }
+
   header {
     display: flex;
     place-items: center;
