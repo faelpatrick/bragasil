@@ -1,34 +1,57 @@
 <script setup>
 import { RouterLink, RouterView } from 'vue-router'
 import HelloWorld from './components/HelloWorld.vue'
+import Home from './views/HomeView.vue'
 </script>
 
 <template>
+  <div id="app">
   <header>
-    <img alt="Vue logo" class="logo" src="@/assets/logo.svg" width="125" height="125" />
-
-    <div class="wrapper">
-      <HelloWorld msg="Bem vindos a Bragasil!" />
-
-      <nav>
-        <RouterLink to="/">Home</RouterLink>
-        <RouterLink to="/about">About</RouterLink>
-      </nav>
-    </div>
   </header>
+    <div class="d-flex justify-center align-center flex-column my-10">
+      <h1 class="mt-10">Bem vindos a <span class="green">BRA</span><span class="red">GASIL!</span></h1>
+      <br>
+      <img alt="Bragasil logo" class="logo" src="@/assets/bragasil.png" width="250" height="250" />
+      <br>
+      <p class="text-center">Comunidade Brasileira em Braga!</p>
 
-  <RouterView />
+      <div class="wrapper">
+        <nav class=" pa-10">
+          <!--   <RouterLink to="/">Home</RouterLink>
+        <RouterLink to="/about">About</RouterLink> -->
+        </nav>
+      </div>
+    </div>
+    <RouterView />
+  </div>
 </template>
 
 <style scoped>
+#app {
+  font-family: 'Inter', sans-serif;
+  color: var(--color-text);
+  background-color: black;
+  min-height: 100vh;
+  color: green;
+}
+
+.green {
+  color: #1b8a41;
+}
+
+.red {
+  color: #ef262d;
+}
+
+#app .reflexo {
+  transform: scaleY(-1);
+  opacity: 0.3;
+  margin-top: -2rem;
+}
+
 header {
   line-height: 1.5;
   max-height: 100vh;
-}
-
-.logo {
-  display: block;
-  margin: 0 auto 2rem;
 }
 
 nav {
