@@ -23,6 +23,9 @@ import Home from './views/HomeView.vue'
       </div>
     </div>
     <RouterView />
+    <footer>
+      <p class="text-center copyright">©2024 Bragasil - desenvolvido por <a href="https://rafaelpatrick.com.br" target="_blank">Rafael Patrick</a> </p>
+    </footer>
   </div>
 </template>
 
@@ -35,6 +38,23 @@ import Home from './views/HomeView.vue'
   color: green;
 }
 
+footer .copyright {
+  position: absolute;
+  bottom: 0;
+  width: 100vw;
+  padding: 0;
+}
+
+footer .copyright {
+  text-align: center;
+  font-size: 0.8rem;
+}
+
+.copyright a {
+  color: green;
+  text-decoration: none;
+}
+footer
 .green {
   color: #1b8a41;
 }
