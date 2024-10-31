@@ -1,19 +1,23 @@
 <template>
-	<div class="mb-10">
+	<div class="login-container">
 		<h1>Login</h1>
-		<form @submit.prevent="loginWithEmail">
-			<div class="form-group">
-        <label for="email">Email:</label>
-        <input type="email" id="email" v-model="email" required>
-      </div>
-      <div class="form-group">
-        <label for="password">Password:</label>
-        <input type="password" id="password" v-model="password" required>
-      </div>
-      <button type="submit">Login</button>
-    </form>
+    <v-form @submit.prevent="loginWithEmail">
+    <v-text-field
+      label="Email"
+      v-model="email"
+      type="email"
+      required
+    ></v-text-field>
+    <v-text-field
+      label="Password"
+      v-model="password"
+      type="password"
+      required
+    ></v-text-field>
+    <v-btn type="submit" color="">Login</v-btn>
+  </v-form>
     <p v-if="error">{{ error }}</p>
-		<button @click="loginWithGoogle">Login with Google</button>
+		<v-btn class="mt-4" @click="loginWithGoogle">Login with Google</v-btn>
 	</div>
 </template>
 
@@ -58,9 +62,10 @@ h1 {
 .login-container {
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: stretch;
   justify-content: center;
-  height: 100vh;
+  width: 400px;
+  margin: auto;
 }
 
 .form-group {
