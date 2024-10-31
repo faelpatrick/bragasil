@@ -9,9 +9,9 @@ import Login from './views/login/LoginFirebase.vue';
   <div class="app">
   <header>
     <img alt="Bragasil logo" class="logo" src="@/assets/bragasil.png" width="150" height="150" />
-    <h1 class="mt-10">Bem vindos a <span class="green">BRA</span><span class="red">GASIL!</span></h1>
+    <h1 class="mt-6">Bem vindos a <span class="green">BRA</span><span class="red">GASIL!</span></h1>
     <div class="wrapper">
-        <nav class=" pa-10">
+        <nav class=" pa-16">
           <!--   <RouterLink to="/">Home</RouterLink>
         <RouterLink to="/about">About</RouterLink> -->
           <RouterLink to="/login">Login</RouterLink>
