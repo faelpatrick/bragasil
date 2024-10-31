@@ -1,6 +1,7 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import HomeView from '../views/HomeView.vue'
 import Login from '@/views/login/LoginFirebase.vue'
+import Logout from '@/views/login/LogoutFirebase.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -23,7 +24,12 @@ const router = createRouter({
       name: 'login',
       component: Login
     }
-
+    ,
+    {
+      path: '/logout',
+      name: 'logout',
+      component: Logout
+    }
   ]
 })
 

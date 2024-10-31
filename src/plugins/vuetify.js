@@ -1,44 +1,50 @@
-// src/plugins/vuetify.js
-// import DefaultTheme from 'vitepress/theme'
-import 'vuetify/styles'
+
+import { createVuetify } from 'vuetify'
 import * as components from 'vuetify/components'
 import * as directives from 'vuetify/directives'
-import { createVuetify } from 'vuetify'
+import '@mdi/font/css/materialdesignicons.css';
+import { mdi } from 'vuetify/iconsets/mdi';
+import 'vuetify/styles';
 
-const defaultTheme = {
-	defaultTheme: 'light', // Pode ser 'light' ou 'dark'
-	themes: {
-		light: {
-			colors: {
-				primary: '#1976D2', // Azul padrão do Vuetify
-				secondary: '#424242',
-				accent: '#82B1FF',
-				error: '#FF5252',
-				info: '#2196F3',
-				success: '#4CAF50',
-				warning: '#FFC107',
-			},
-		},
-		dark: {
-			colors: {
-				primary: '#1E88E5', // Personalize as cores do tema escuro
-				secondary: '#424242',
-				accent: '#FF4081',
-				error: '#FF5252',
-				info: '#2196F3',
-				success: '#4CAF50',
-				warning: '#FB8C00',
-			},
-		},
-	},
-}
-
-const vuetify = createVuetify({ components, directives, defaultTheme })
-
-export default {
-  // ...DefaultTheme,
-  enhanceApp({ app }) {
-    app.use(vuetify)
+// Configuração de tema
+const theme = {
+  defaultTheme: 'light', // Pode ser 'light' ou 'dark'
+  themes: {
+    light: {
+      colors: {
+        primary: '#1976D2',
+        secondary: '#424242',
+        accent: '#82B1FF',
+        error: '#FF5252',
+        info: '#2196F3',
+        success: '#4CAF50',
+        warning: '#FFC107',
+      },
+    },
+    dark: {
+      colors: {
+        primary: '#1E88E5',
+        secondary: '#424242',
+        accent: '#FF4081',
+        error: '#FF5252',
+        info: '#2196F3',
+        success: '#4CAF50',
+        warning: '#FB8C00',
+      },
+    },
   },
-}
+};
 
+// Configuração de ícones
+const icons = {
+  defaultSet: 'mdi',
+  sets: { mdi },
+};
+
+// Cria e exporta a instância do Vuetify com as configurações
+export default createVuetify({
+  components,
+  directives,
+  theme,
+  icons,
+});
