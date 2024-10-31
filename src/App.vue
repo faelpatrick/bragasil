@@ -2,25 +2,28 @@
 import { RouterLink, RouterView } from 'vue-router'
 import HelloWorld from './components/HelloWorld.vue'
 import Home from './views/HomeView.vue'
+import Login from './views/login/LoginFirebase.vue';
 </script>
 
 <template>
   <div class="app">
   <header>
-  </header>
-    <div class="d-flex justify-center align-center flex-column my-10">
-      <h1 class="mt-10">Bem vindos a <span class="green">BRA</span><span class="red">GASIL!</span></h1>
-      <br>
-      <img alt="Bragasil logo" class="logo" src="@/assets/bragasil.png" width="250" height="250" />
-      <br>
-      <p class="text-center">Comunidade Brasileira em Braga!</p>
-
-      <div class="wrapper">
+    <img alt="Bragasil logo" class="logo" src="@/assets/bragasil.png" width="150" height="150" />
+    <h1 class="mt-10">Bem vindos a <span class="green">BRA</span><span class="red">GASIL!</span></h1>
+    <div class="wrapper">
         <nav class=" pa-10">
           <!--   <RouterLink to="/">Home</RouterLink>
         <RouterLink to="/about">About</RouterLink> -->
+          <RouterLink to="/login">Login</RouterLink>
         </nav>
       </div>
+  </header>
+    <div class="d-flex justify-center align-center flex-column my-10">
+      <br>
+      <br>
+      <p class="text-center">Comunidade Brasileira em Braga!</p>
+
+    
     </div>
     <RouterView />
     <footer>
