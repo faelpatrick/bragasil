@@ -3,7 +3,6 @@ import { getAnalytics } from "firebase/analytics";
 import { getFirestore } from "firebase/firestore"; // Exemplo com Firestore
 import { getAuth } from "firebase/auth"; // Exemplo com Auth
 
-console.log(import.meta.env);
 // Configuração do Firebase
 const firebaseConfig = {
   apiKey: import.meta.env.VITE_FIREBASE_API_KEY,
@@ -15,7 +14,6 @@ const firebaseConfig = {
   measurementId: import.meta.env.VITE_FIREBASE_MEASUREMENT_ID
 };
 
-console.log(firebaseConfig);
 // Inicializa o Firebase
 const appFirebase = initializeApp(firebaseConfig);
 

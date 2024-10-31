@@ -45,7 +45,6 @@ const loginWithGoogle = async () => {
 		router.push('/'); // Redireciona após o login bem-sucedido
 	} catch (error) {
 		console.error("Erro ao fazer login com Google:", error);
-		console.log(error);
 	}
 };
 
