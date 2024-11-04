@@ -66,14 +66,28 @@ const socials = ref([
 				icon: 'mdi-instagram',
 				color: 'purple'
 			},
-			{
-				name: 'Facebook',
-				link: 'https://www.facebook.com/tiomaykon/',
-				icon: 'mdi-facebook',
-				color: 'blue'
-			},
 		]
 	},
+  {
+    name: 'Casal Buscapé',
+    category: 'Dicas',
+    icon: 'https://yt3.googleusercontent.com/L_3RU6S10Qhd7-MSAvxy1jUfrmKGaTIbGxvgGd0qO35sSG2JR-32dwRyjeQGjPUB0uOT7h1X=s160-c-k-c0x00ffffff-no-rj',
+    description: 'Canal de dicas de Portugal',
+    midiasSociais: [
+      {
+        name: 'YouTube',
+        link: 'https://www.youtube.com/c/CasalBuscap%C3%A9/',
+        icon: 'mdi-youtube',
+        color: 'red'
+      },
+      {
+        name: 'Instagram',
+        link: 'https://www.instagram.com/casalbuscape/',
+        icon: 'mdi-instagram',
+        color: 'purple'
+      },
+    ]
+  }
 ]);
 </script>
 
