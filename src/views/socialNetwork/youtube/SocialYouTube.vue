@@ -1,6 +1,6 @@
 <template>
   <v-container class="pa-0">
-    <h2 class="ml-6">App Úteis</h2>
+    <h2 class="ml-6">Canais recomendados no YouTube</h2>
     <!-- Slide Group de aplicativos recomendados -->
     <v-slide-group
       v-model="activeSlide"
@@ -8,39 +8,39 @@
       show-arrows
     >
       <v-slide-item
-        v-for="(app, index) in apps"
+        v-for="(yt, index) in yts"
         :key="index"
         class="slide-item"
         elevation="5"
       >
         <v-sheet
           color="green darken-4"
-          class="app-card d-flex flex-column align-center justify-center rounded-xl"
+          class="yt-card d-flex flex-column align-center justify-center rounded-xl"
           elevation="5"
           
         >
           <v-avatar size="70" class="mb-4" color="white">
-            <v-img :src="app.icon" alt="Ícone do app" />
+            <v-img :src="yt.icon" alt="Ícone do yt" />
           </v-avatar>
-          <h3 class="app-title text-h6 text-white">{{ app.name }}</h3>
+          <h3 class="yt-title text-h6 text-white">{{ yt.name }}</h3>
           <div class="d-flex ">
             <v-btn
             class="ma-2"
             color="blue"
-            :href="app.playStoreLink"
+            :href="yt.playStoreLink"
             target="_blank"
             icon="mdi-google-play"
             />
             <v-btn
             class="ma-2"
             color="white"
-            :href="app.appStoreLink"
+            :href="yt.ytStoreLink"
             target="_blank"
-            icon="mdi-apple"
+            icon="mdi-ytle"
             />
           </div>
 
-          <p class="app-description text-white text-center">{{ app.description }}</p>
+          <p class="yt-description text-white text-center">{{ yt.description }}</p>
         </v-sheet>
       </v-slide-item>
     </v-slide-group>
@@ -52,39 +52,27 @@ import { ref } from 'vue';
 
 const activeSlide = ref(0); // Slide atual
 
-// Lista de apps recomendados
-const apps = ref([
+// Lista de yts recomendados
+const yts = ref([
   {
-    name: 'App TUB',
-    category: 'Transporte',
+    name: 'Tio Maicon',
+    category: 'Dicas',
     icon: 'https://play-lh.googleusercontent.com/iSreCpNE1K9TS5sBX07r6JRtFUVrMrpjbVNlnKavmYJu2cXcKbkoMsc_1uay4yoEQ3M=w240-h480-rw',
-    description: 'Descrição do App TUB',
-    playStoreLink: 'https://play.google.com/store/apps/details?id=pt.tub.smartapp&hl=pt_PT',
-    appStoreLink: 'https://apps.apple.com/pt/app/tub-app/id1280499795'
   },
   {
     name: 'Pingo Doce',
     category: 'Supermercado',
     icon: 'https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/ba/6e/f0/ba6ef043-6158-e5ee-07a4-a3d32787a40e/AppIcon-0-1x_U007ephone-0-1-85-220-0.png/246x0w.webp',
-    description: 'Descrição do Pingo Doce',
-    playStoreLink: 'https://play.google.com/store/apps/details?id=pt.pingodoce&hl=pt_PT',
-    appStoreLink: 'https://apps.apple.com/pt/app/o-meu-pingo-doce/id1218939596'
   },
   {
     name: 'Uber / Uber Eats',
     category: 'Transporte / Delivery',
     icon: 'https://play-lh.googleusercontent.com/n109V9dur2NFwV7Fbr8lwlU-isXRR0K7Q-pvp1LCyRwTVP2DfJaR-dklmXzK0MhQuz9E=w240-h480-rw',
-    description: 'Descrição do Uber',
-    playStoreLink: 'https://play.google.com/store/apps/details?id=com.ubercab&hl=pt_PT',
-    appStoreLink: 'httphttps://apps.apple.com/pt/app/uber-pe%C3%A7a-uma-viagem/id368677368'
   },
   {
     name: 'Glovo',
     category: 'Delivery',
     icon: 'https://play-lh.googleusercontent.com/iTpx7rDQGJQd4dHVwhsKmSpQv72zyJ6M4df8smHO7rGCOJUKeKZtynrft0NWlnf47w=w240-h480-rw',
-    description: 'Descrição do Spotify',
-    playStoreLink: 'https://play.google.com/store/apps/details?id=com.glovo&hl=pt_PT',
-    appStoreLink: 'https://apps.apple.com/pt/app/glovo-entrega-de-comida-e-mais/id951812684'
   },
   // Adicione mais apps conforme necessário
 ]);

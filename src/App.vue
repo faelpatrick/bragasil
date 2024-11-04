@@ -7,7 +7,7 @@ import { useAuth } from '@/composables/useAuth';
 // import { signInWithEmailAndPassword, GoogleAuthProvider, signInWithPopup } from 'firebase/auth';
 import UserMenu from './views/menu/UserMenu.vue';
 import AppSugerido from './views/appSugereido/AppSugerido.vue';
-
+import Influenciadores from './views/socialNetwork/SocialInfluenciadores.vue';
 const router = useRouter();
 const { user } = useAuth();
 
@@ -41,6 +41,7 @@ provide('navigateTo', navigateTo);
       <p class="text-center">Comunidade Brasileira em Braga!</p>
     </div>
     <AppSugerido />
+    <Influenciadores />
     <RouterView class="pa-2" />
     <footer>
       <p class="text-center copyright">
@@ -64,11 +65,19 @@ body {
   max-width: 100vw;
 }
 
+footer{
+  position: relative;
+  width: 100vw;
+  height: 100px;
+  color: white;
+  padding: 14px 4px;
+}
+
 footer .copyright {
   position: absolute;
   bottom: 0;
   width: 100vw;
-  padding: 0;
+  padding-bottom: 4px ;
 }
 
 #header-banner {
