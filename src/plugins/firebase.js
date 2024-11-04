@@ -20,7 +20,7 @@ const firebaseConfig = {
 };
 
 
-console.log('Firebase log: ',firebaseConfig);
+console.log('Firebase log v2: ',firebaseConfig);
 // Inicializa o Firebase
 const appFirebase = initializeApp(firebaseConfig);
 
