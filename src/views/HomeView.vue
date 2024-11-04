@@ -16,8 +16,10 @@ const { user } = useAuth();
       </div>
       <p class="text-center">Comunidade Brasileira em Braga!</p>
     </div>
-    <AppSugerido />
-    <Influenciadores />
+    <div class="d-flex justify-center align-center flex-column ga-8 ">
+      <AppSugerido />
+      <Influenciadores />
+    </div>
   </main>
 </template>
 

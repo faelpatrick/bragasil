@@ -1,5 +1,5 @@
 <template>
-  <v-container class="pa-0">
+  <div class="pa-0">
     <h2 class="ml-6">Canais recomendados no YouTube</h2>
     <!-- Slide Group de aplicativos recomendados -->
     <v-slide-group
@@ -44,7 +44,7 @@
         </v-sheet>
       </v-slide-item>
     </v-slide-group>
-  </v-container>
+  </div>
 </template>
 
 <script setup>

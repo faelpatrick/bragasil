@@ -1,5 +1,5 @@
 <template>
-  <div class="pa-0">
+  <v-container class="pa-0">
     <h2 class="ml-6">App Úteis</h2>
     <!-- Slide Group de aplicativos recomendados -->
     <v-slide-group
@@ -44,7 +44,7 @@
         </v-sheet>
       </v-slide-item>
     </v-slide-group>
-  </div>
+  </v-container>
 </template>
 
 <script setup>
