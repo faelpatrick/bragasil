@@ -65,7 +65,7 @@ body {
   max-width: 100vw;
 }
 
-footer{
+footer {
   position: relative;
   width: 100vw;
   height: 100px;
@@ -77,7 +77,7 @@ footer .copyright {
   position: absolute;
   bottom: 0;
   width: 100vw;
-  padding-bottom: 4px ;
+  padding-bottom: 4px;
 }
 
 #header-banner {
@@ -116,15 +116,23 @@ header h1 {
   margin: 0 0 16px 8px;
 }
 
-@media (min-width: 1024px) {
+@media (max-width: 1024px) {
   #app {
     width: 100vw;
     min-height: 100vh;
   }
 
   .logo {
-    width: 100px;
-    height: 100px;
+    width: 90px;
+    height: 90px;
+  }
+
+  header {
+    line-height: 1.2;
+  }
+
+  header h1 {
+    font-size: 2rem;
   }
 
 }

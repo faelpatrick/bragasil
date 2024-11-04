@@ -1,27 +1,31 @@
 <template>
-  <v-card>
-    <v-layout>
-      <v-navigation-drawer v-model="drawerUserMenu" location="right" temporary>
-        <v-list-item v-if="user" :prepend-avatar="user.photoURL || avatar" :title="user.displayName || 'Usuário'"
-          class="mt-10 py-4">
-        </v-list-item>
+  <div id="main-menu">
 
-        <v-divider></v-divider>
-        <v-list-item prepend-icon="mdi-view-dashboard" title="Home" @click="navigateTo('/')">
-          Home
-        </v-list-item>
-        <v-list-item v-if="!user" prepend-icon="mdi-login" title="Login" @click="navigateTo('/login')">
-          Login
-        </v-list-item>
-        <v-list-item v-if="user" prepend-icon="mdi-logout" title="Logout" @click="navigateTo('/logout')">
-          Logout
-        </v-list-item>
+    <v-card>
+      <v-layout>
+        <v-navigation-drawer v-model="drawerUserMenu" location="right" temporary>
+          <v-list-item v-if="user" :prepend-avatar="user.photoURL || avatar" :title="user.displayName || 'Usuário'"
+            class="mt-10 py-4">
+          </v-list-item>
 
-      </v-navigation-drawer>
-    </v-layout>
-  </v-card>
-  <v-btn id="topMenu" color="green" :icon="drawerUserMenu ? 'mdi-close' : 'mdi-menu'" @click.stop="drawerUserMenu = !drawerUserMenu">
-  </v-btn>
+          <v-divider></v-divider>
+          <v-list-item prepend-icon="mdi-view-dashboard" title="Home" @click="navigateTo('/')">
+            Home
+          </v-list-item>
+          <v-list-item v-if="!user" prepend-icon="mdi-login" title="Login" @click="navigateTo('/login')">
+            Login
+          </v-list-item>
+          <v-list-item v-if="user" prepend-icon="mdi-logout" title="Logout" @click="navigateTo('/logout')">
+            Logout
+          </v-list-item>
+
+        </v-navigation-drawer>
+      </v-layout>
+    </v-card>
+    <v-btn id="topMenu" color="green" :icon="drawerUserMenu ? 'mdi-close' : 'mdi-menu'"
+      @click.stop="drawerUserMenu = !drawerUserMenu">
+    </v-btn>
+  </div>
 </template>
 
 <script setup>
@@ -52,5 +56,9 @@ onMounted(() => {
   position: absolute;
   top: 6px;
   right: 6px;
+}
+
+#main-menu {
+  z-index: 99999;
 }
 </style>
