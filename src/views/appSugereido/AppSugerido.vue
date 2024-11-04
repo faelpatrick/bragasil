@@ -1,0 +1,109 @@
+<template>
+  <v-container class="pa-0">
+    <!-- Slide Group de aplicativos recomendados -->
+    <v-slide-group
+      v-model="activeSlide"
+      class="slide-group-container"
+      show-arrows
+    >
+      <v-slide-item
+        v-for="(app, index) in apps"
+        :key="index"
+        class="slide-item"
+      >
+        <v-sheet
+          color="grey darken-4"
+          class="app-card d-flex flex-column align-center justify-center"
+          elevation="5"
+          rounded
+        >
+          <v-avatar size="70" class="mb-4" color="white">
+            <v-img :src="app.icon" alt="Ícone do app" />
+          </v-avatar>
+          <h3 class="app-title text-h6 text-white">{{ app.name }}</h3>
+          <div class="d-flex ">
+            <v-btn
+            class="ma-2"
+            color="blue"
+            :href="app.playStoreLink"
+            target="_blank"
+            icon="mdi-google-play"
+            />
+            <v-btn
+            class="ma-2"
+            color="white"
+            :href="app.appStoreLink"
+            target="_blank"
+            icon="mdi-apple"
+            />
+          </div>
+
+          <p class="app-description text-white text-center">{{ app.description }}</p>
+        </v-sheet>
+      </v-slide-item>
+    </v-slide-group>
+  </v-container>
+</template>
+
+<script setup>
+import { ref } from 'vue';
+
+const activeSlide = ref(0); // Slide atual
+
+// Lista de apps recomendados
+const apps = ref([
+  {
+    name: 'App TUB',
+    icon: 'https://play-lh.googleusercontent.com/iSreCpNE1K9TS5sBX07r6JRtFUVrMrpjbVNlnKavmYJu2cXcKbkoMsc_1uay4yoEQ3M=w240-h480-rw',
+    description: 'Descrição do App TUB',
+    playStoreLink: 'https://play.google.com/store/apps/details?id=pt.tub.smartapp&hl=pt_PT',
+    appStoreLink: 'https://apps.apple.com/pt/app/tub-app/id1280499795'
+  },
+  {
+    name: 'Pingo Doce',
+    icon: 'https://example.com/icon-pingo-doce.png',
+    description: 'Descrição do Pingo Doce'
+  },
+  {
+    name: 'Uber',
+    icon: 'https://example.com/icon-uber.png',
+    description: 'Descrição do Uber'
+  },
+  {
+    name: 'Spotify',
+    icon: 'https://example.com/icon-spotify.png',
+    description: 'Descrição do Spotify'
+  },
+  // Adicione mais apps conforme necessário
+]);
+</script>
+
+<style scoped>
+
+:root {
+  --color-google: linear-gradient(to right, #4285f4, #34a853, #fbbc05, #ea4335);
+}
+
+.slide-group-container {
+  display: flex;
+  overflow-x: auto;
+  border-radius: 8px;
+}
+
+.slide-item {
+  min-width: 200px;
+  padding: 16px;
+  box-sizing: border-box;
+}
+
+.app-card {
+  width: 100%;
+  padding: 16px;
+  text-align: center;
+}
+
+.color-google {
+  background-color: gradient(to right, #4285f4, #34a853, #fbbc05, #ea4335);
+}
+
+</style>

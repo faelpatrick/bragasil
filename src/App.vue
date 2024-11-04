@@ -1,11 +1,13 @@
 <script setup>
 import { provide } from 'vue';
 import { RouterView, useRouter } from 'vue-router'
-import UserMenu from './views/menu/UserMenu.vue';
+import { useAuth } from '@/composables/useAuth';
 // import { useRouter } from 'vue-router';
 // import { auth } from '@/plugins/firebase'; // Importa a instância de autenticação do Firebase
 // import { signInWithEmailAndPassword, GoogleAuthProvider, signInWithPopup } from 'firebase/auth';
-import { useAuth } from '@/composables/useAuth';
+import UserMenu from './views/menu/UserMenu.vue';
+import AppSugerido from './views/appSugereido/AppSugerido.vue';
+
 const router = useRouter();
 const { user } = useAuth();
 
@@ -38,6 +40,7 @@ provide('navigateTo', navigateTo);
       </div>
       <p class="text-center">Comunidade Brasileira em Braga!</p>
     </div>
+    <AppSugerido />
     <RouterView class="pa-2" />
     <footer>
       <p class="text-center copyright">
