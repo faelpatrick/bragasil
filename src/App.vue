@@ -8,11 +8,14 @@ import UserMenu from './views/menu/UserMenu.vue';
 
 const router = useRouter();
 
+const isMobile = (('ontouchstart' in window) || (navigator.msMaxTouchPoints > 0));
+
 const navigateTo = (path) => {
   router.push(path);
 };
 
 provide('navigateTo', navigateTo);
+provide('isMobile', isMobile);
 
 </script>
 

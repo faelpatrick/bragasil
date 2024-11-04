@@ -2,45 +2,20 @@
   <v-container class="pa-0">
     <h2 class="ml-6">App Úteis</h2>
     <!-- Slide Group de aplicativos recomendados -->
-    <v-slide-group
-      v-model="activeSlide"
-      class="slide-group-container bg-white rounded-xl"
-      show-arrows
-    >
-      <v-slide-item
-        v-for="(app, index) in apps"
-        :key="index"
-        class="slide-item"
-        elevation="5"
-      >
-        <v-sheet
-          color="green darken-4"
-          class="app-card d-flex flex-column align-center justify-center rounded-xl"
-          elevation="5"
-          
-        >
+    <v-slide-group v-model="activeSlide" class="slide-group-container bg-white rounded-xl" :show-arrows="!isMobile">
+      <v-slide-item v-for="(app, index) in apps" :key="index" class="slide-item" elevation="5">
+        <v-sheet color="green darken-4" class="app-card d-flex flex-column align-center justify-center rounded-xl"
+          elevation="5">
           <v-avatar size="70" class="mb-4" color="white">
             <v-img :src="app.icon" alt="Ícone do app" />
           </v-avatar>
           <h3 class="app-title text-h6 text-white">{{ app.name }}</h3>
           <div class="d-flex ">
-            <v-btn
-            class="ma-2"
-            color="blue"
-            :href="app.playStoreLink"
-            target="_blank"
-            icon="mdi-google-play"
-            />
-            <v-btn
-            class="ma-2"
-            color="white"
-            :href="app.appStoreLink"
-            target="_blank"
-            icon="mdi-apple"
-            />
+            <v-btn class="ma-2" color="blue" :href="app.playStoreLink" target="_blank" icon="mdi-google-play" />
+            <v-btn class="ma-2" color="white" :href="app.appStoreLink" target="_blank" icon="mdi-apple" />
           </div>
 
-          <p class="app-description text-white text-center">{{ app.description }}</p>
+          <!-- <p class="app-description text-white text-center">{{ app.description }}</p> -->
         </v-sheet>
       </v-slide-item>
     </v-slide-group>
@@ -48,8 +23,10 @@
 </template>
 
 <script setup>
-import { ref } from 'vue';
+import { ref, inject } from 'vue';
 
+
+const isMobile = inject('isMobile');
 const activeSlide = ref(0); // Slide atual
 
 // Lista de apps recomendados
@@ -91,7 +68,6 @@ const apps = ref([
 </script>
 
 <style scoped>
-
 :root {
   --color-google: linear-gradient(to right, #4285f4, #34a853, #fbbc05, #ea4335);
 }
@@ -118,4 +94,11 @@ const apps = ref([
   background-color: gradient(to right, #4285f4, #34a853, #fbbc05, #ea4335);
 }
 
+@media screen and (max-width: 1024px) {
+  .slide-item {
+    padding: 10px;
+    box-sizing: border-box;
+  }
+
+}
 </style>

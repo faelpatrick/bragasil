@@ -66,6 +66,7 @@ h1 {
   justify-content: center;
   width: 400px;
   margin: auto;
+  padding: 2rem;
 }
 
 .form-group {
