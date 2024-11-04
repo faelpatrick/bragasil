@@ -1,23 +1,41 @@
 <script setup>
-import { RouterLink, RouterView } from 'vue-router'
+import { provide } from 'vue';
+import { RouterView, useRouter } from 'vue-router'
 import UserMenu from './views/menu/UserMenu.vue';
 // import { useRouter } from 'vue-router';
 // import { auth } from '@/plugins/firebase'; // Importa a instância de autenticação do Firebase
 // import { signInWithEmailAndPassword, GoogleAuthProvider, signInWithPopup } from 'firebase/auth';
+import { useAuth } from '@/composables/useAuth';
+const router = useRouter();
+const { user } = useAuth();
+
+const navigateTo = (path) => {
+  router.push(path);
+};
+
+provide('navigateTo', navigateTo);
+
 </script>
 
 <template>
   <div class="app">
     <header>
       <div class="d-flex justify-center align-center flex-row my-1 w-100">
-        <img alt="Bragasil logo" class="logo" src="@/assets/bragasil.png" width="150" height="150" />
-        <h1 class="mt-6">Bem vindos a <span class="green">BRA</span><span class="red">GASIL!</span></h1>
+        <div id="header-banner" class="d-flex justify-center align-center flex-row my-1" @click="navigateTo('/')">
+          <img alt="Bragasil logo" class="logo" src="@/assets/bragasil.png" width="150" height="150" />
+          <h1 class="mt-6">
+            Bem vindos a <span class="green">BRA</span><span class="red">GASIL!</span></h1>
+        </div>
         <UserMenu />
         <div class="wrapper">
         </div>
       </div>
     </header>
     <div class="d-flex justify-center align-center flex-column my-10">
+      <div v-if="user">
+        <p>Bem Vindo {{ user?.displayName.split(" ")[0] }} estamos trabalhando para lhe entregar recursos personalisados
+        </p>
+      </div>
       <p class="text-center">Comunidade Brasileira em Braga!</p>
     </div>
     <RouterView class="pa-2" />
@@ -37,6 +55,7 @@ body {
   width: 100vw;
   background-color: black;
 }
+
 #app {
   font-family: 'Inter', sans-serif;
   max-width: 100vw;
@@ -47,6 +66,10 @@ footer .copyright {
   bottom: 0;
   width: 100vw;
   padding: 0;
+}
+
+#header-banner {
+  cursor: pointer;
 }
 
 footer .copyright {
@@ -74,6 +97,11 @@ footer .green {
 header {
   line-height: 1.5;
   max-width: 100vw;
+}
+
+header h1 {
+  font-size: 3rem;
+  margin: 0 0 16px 8px;
 }
 
 @media (min-width: 1024px) {
