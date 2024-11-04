@@ -7,6 +7,8 @@
           <v-list-item v-if="user" :prepend-avatar="user.photoURL || avatar" :title="user.displayName || 'Usuário'"
             class="mt-10 py-4">
           </v-list-item>
+          <v-list-item v-if="!user" class="mt-10 py-4">
+          </v-list-item>
 
           <v-divider></v-divider>
           <v-list-item prepend-icon="mdi-view-dashboard" title="Home" @click="navigateTo('/')">
