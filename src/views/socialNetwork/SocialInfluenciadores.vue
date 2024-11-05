@@ -185,6 +185,20 @@ const socials = ref([
       },
     ]
   },
+  {
+    name: 'Casal em Braga',
+    category: 'Vlog',
+    icon: '/imagens/social/casalembraga.jpg',
+    description: 'Vlog de um casal em Braga',
+    midiasSociais: [
+      {
+        name: 'YouTube',
+        link: 'https://www.youtube.com/@casalembraga.',
+        icon: 'mdi-youtube',
+        color: 'red'
+      },
+    ]
+  },
 
 ]);
 </script>
