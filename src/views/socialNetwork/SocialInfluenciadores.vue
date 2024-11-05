@@ -78,6 +78,7 @@ const socials = ref([
   display: flex;
   overflow-x: auto;
   border-radius: 8px;
+  justify-content: center;
 }
 
 .slide-item {

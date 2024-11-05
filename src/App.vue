@@ -56,4 +56,9 @@ body {
   max-width: 100vw;
 }
 
+.v-slide-group__container .v-slide-group__content{
+  justify-content: center;
+}
+
+
 </style>
