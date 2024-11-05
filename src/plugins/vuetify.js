@@ -3,8 +3,9 @@ import { createVuetify } from 'vuetify'
 import * as components from 'vuetify/components'
 import * as directives from 'vuetify/directives'
 import '@mdi/font/css/materialdesignicons.css';
-import { mdi } from 'vuetify/iconsets/mdi';
+import {  mdi } from 'vuetify/iconsets/mdi';
 import 'vuetify/styles';
+import { customSvgs } from './customSvgs';
 
 // Configuração de tema
 const theme = {
@@ -37,8 +38,14 @@ const theme = {
 
 // Configuração de ícones
 const icons = {
-  defaultSet: 'mdi',
-  sets: { mdi },
+  defaultSet: 'mdi', // Conjunto de ícones padrão
+  aliases: {
+    ...customSvgs, // Adiciona ícones personalizados
+  },
+  sets: {
+    mdi, // Conjunto do Material Design Icons
+    nav: customSvgs, // Conjunto personalizado
+  },
 };
 
 // Cria e exporta a instância do Vuetify com as configurações

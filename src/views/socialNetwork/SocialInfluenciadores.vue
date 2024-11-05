@@ -1,6 +1,6 @@
 <template>
   <v-container class="pa-0">
-    <h2 class="ml-6">Canais recomendados no YouTube</h2>
+    <h2 class="ml-6">Canais recomendados no YouTube</h2> 
     <!-- Slide Group de aplicativos recomendados -->
     <v-slide-group v-model="activeSlide" class="slide-group-container bg-white rounded-xl" :show-arrows="!isMobile">
       <v-slide-item v-for="(social, index) in socials" :key="index" class="slide-item" elevation="5">
@@ -13,7 +13,10 @@
           <!-- <p class="social-description text-white text-center">{{ social.description }}</p> -->
           <div class="d-flex ">
             <v-btn v-for="media in social.midiasSociais" :key="`mk0-${media.name}`" class="ma-2"
-              :color="media.color ? media.color : 'white'" :href="media.link" target="_blank" :icon="media.icon" />
+              :color="media.color ? media.color : 'white'" :href="media.link" target="_blank"  icon>
+              <v-icon :icon="media.icon" />
+            </v-btn>
+            
           </div>
 
         </v-sheet>
@@ -34,7 +37,7 @@ const socials = ref([
   {
     name: 'Casal Buscapé',
     category: 'Dicas',
-    icon: 'https://yt3.googleusercontent.com/L_3RU6S10Qhd7-MSAvxy1jUfrmKGaTIbGxvgGd0qO35sSG2JR-32dwRyjeQGjPUB0uOT7h1X=s160-c-k-c0x00ffffff-no-rj',
+    icon: './public/imagens/social/casalbuscape.jpg',
     description: 'Canal de dicas de Portugal',
     midiasSociais: [
       {
@@ -54,7 +57,7 @@ const socials = ref([
   {
     name: 'Gustavo Luna 🇵🇹 ',
     category: 'Vlog',
-    icon: 'https://yt3.googleusercontent.com/Ucyr93rCOJbVUcgaHWQ4loRnUEFBqa3yl_ntBFRjC-3amz8UK7xv3MECWMS2ke21u0qnGDeXrw=s160-c-k-c0x00ffffff-no-rj',
+    icon: './public/imagens/social/gustavoluna.jpg',
     description: 'Vlog Imigração',
     midiasSociais: [
       {
@@ -69,6 +72,32 @@ const socials = ref([
         icon: 'mdi-instagram',
         color: 'purple'
       },
+    ]
+  },
+  {
+    name: 'Mayan Xavier',
+    category: 'Vlog',
+    icon: './public/imagens/social/mayan_xavierr.jpg',
+    description: 'Vlog Imigrante Brasileiro em Portugal',
+    midiasSociais: [
+      {
+        name: 'YouTube',
+        link: 'https://www.youtube.com/channel/UCtHTOZFWjo3LuD2uNPxEkrQ',
+        icon: 'mdi-youtube',
+        color: 'red'
+      },
+      {
+        name: 'Instagram',
+        link: 'https://www.instagram.com/mayan_xavierr/',
+        icon: 'mdi-instagram',
+        color: 'purple'
+      },
+      {
+        name: 'TikTok',
+        link: 'https://www.tiktok.com/@mayan_portugal',
+        icon: 'nav:tiktok',
+        color: 'white'
+      }
     ]
   },
   {
@@ -153,6 +182,12 @@ const socials = ref([
   width: 100%;
   padding: 16px;
   text-align: center;
+}
+
+.social-card .v-icon {
+  width: 25px;
+  height: 25px;
+  border-radius: 100%;
 }
 
 @media screen and (max-width: 1024px) {
