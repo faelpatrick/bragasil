@@ -30,26 +30,7 @@ const activeSlide = ref(0); // Slide atual
 
 // Lista de socials recomendados
 const socials = ref([
-  {
-    name: 'Tio Maicon / Portugal Diários',
-    category: 'Dicas',
-    icon: 'https://yt3.googleusercontent.com/ytc/AIdro_kIici6P04CIVb0cm5EQzF2jgpAbDk1NI16R_gqSbq7BS3v=s160-c-k-c0x00ffffff-no-rj',
-    description: 'Canal de dicas de Braga',
-    midiasSociais: [
-      {
-        name: 'YouTube',
-        link: 'https://www.youtube.com/c/PortugalDi%C3%A1rios/',
-        icon: 'mdi-youtube',
-        color: 'red'
-      },
-      {
-        name: 'Instagram',
-        link: 'https://www.instagram.com/tiomaykon/',
-        icon: 'mdi-instagram',
-        color: 'purple'
-      },
-    ]
-  },
+
   {
     name: 'Casal Buscapé',
     category: 'Dicas',
@@ -65,6 +46,26 @@ const socials = ref([
       {
         name: 'Instagram',
         link: 'https://www.instagram.com/casalbuscape/',
+        icon: 'mdi-instagram',
+        color: 'purple'
+      },
+    ]
+  },
+  {
+    name: 'Gustavo Luna 🇵🇹 ',
+    category: 'Vlog',
+    icon: 'https://yt3.googleusercontent.com/Ucyr93rCOJbVUcgaHWQ4loRnUEFBqa3yl_ntBFRjC-3amz8UK7xv3MECWMS2ke21u0qnGDeXrw=s160-c-k-c0x00ffffff-no-rj',
+    description: 'Vlog Imigração',
+    midiasSociais: [
+      {
+        name: 'YouTube',
+        link: 'https://www.youtube.com/@GustavoLunaPT',
+        icon: 'mdi-youtube',
+        color: 'red'
+      },
+      {
+        name: 'Instagram',
+        link: 'https://www.instagram.com/gustavolunapt',
         icon: 'mdi-instagram',
         color: 'purple'
       },
@@ -91,6 +92,26 @@ const socials = ref([
     ]
   },
   {
+    name: 'Tio Maicon / Portugal Diários',
+    category: 'Dicas',
+    icon: 'https://yt3.googleusercontent.com/ytc/AIdro_kIici6P04CIVb0cm5EQzF2jgpAbDk1NI16R_gqSbq7BS3v=s160-c-k-c0x00ffffff-no-rj',
+    description: 'Canal de dicas de Braga',
+    midiasSociais: [
+      {
+        name: 'YouTube',
+        link: 'https://www.youtube.com/c/PortugalDi%C3%A1rios/',
+        icon: 'mdi-youtube',
+        color: 'red'
+      },
+      {
+        name: 'Instagram',
+        link: 'https://www.instagram.com/tiomaykon/',
+        icon: 'mdi-instagram',
+        color: 'purple'
+      },
+    ]
+  },
+  {
     name: 'Vagas pelo Mundo',
     category: 'Dicas',
     icon: 'https://yt3.googleusercontent.com/F54h4DlYWAws1uc4PvA0EFC_TwaXK_3cKGIr4KK-FpZnnXthOoxOIsBVAS_E_iaFD0kIreAsmA=s160-c-k-c0x00ffffff-no-rj',
@@ -109,7 +130,8 @@ const socials = ref([
         color: 'purple'
       },
     ]
-  }
+  },
+
 ]);
 </script>
 
