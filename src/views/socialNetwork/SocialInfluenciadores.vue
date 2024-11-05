@@ -10,7 +10,7 @@
             <v-img :src="social.icon" alt="Ícone do social" />
           </v-avatar>
           <h3 class="social-title text-h6 text-white">{{ social.name }}</h3>
-          <p class="social-description text-white text-center">{{ social.description }}</p>
+          <!-- <p class="social-description text-white text-center">{{ social.description }}</p> -->
           <div class="d-flex ">
             <v-btn v-for="media in social.midiasSociais" :key="`mk0-${media.name}`" class="ma-2"
               :color="media.color ? media.color : 'white'" :href="media.link" target="_blank" :icon="media.icon" />
@@ -65,6 +65,46 @@ const socials = ref([
       {
         name: 'Instagram',
         link: 'https://www.instagram.com/casalbuscape/',
+        icon: 'mdi-instagram',
+        color: 'purple'
+      },
+    ]
+  },
+  {
+    name: 'Portugaiando',
+    category: 'Dicas',
+    icon: 'https://yt3.googleusercontent.com/m6u_n0NsXJDPBpllbcu-c5iBfJrC3cw8I-tHsIfqS1NAiTlJoRpZznqywDyHDrVaDXw3BinC9A=s160-c-k-c0x00ffffff-no-rj',
+    description: 'Canal de dicas de Portugal',
+    midiasSociais: [
+      {
+        name: 'YouTube',
+        link: 'https://www.youtube.com/c/Portugaiando',
+        icon: 'mdi-youtube',
+        color: 'red'
+      },
+      {
+        name: 'Instagram',
+        link: 'https://www.instagram.com/portugaiando/',
+        icon: 'mdi-instagram',
+        color: 'purple'
+      },
+    ]
+  },
+  {
+    name: 'Vagas pelo Mundo',
+    category: 'Dicas',
+    icon: 'https://yt3.googleusercontent.com/F54h4DlYWAws1uc4PvA0EFC_TwaXK_3cKGIr4KK-FpZnnXthOoxOIsBVAS_E_iaFD0kIreAsmA=s160-c-k-c0x00ffffff-no-rj',
+    description: 'Canal de vagas de emprego em Portugal e no mundo',
+    midiasSociais: [
+      {
+        name: 'YouTube',
+        link: 'https://www.youtube.com/@VagaspeloMundo',
+        icon: 'mdi-youtube',
+        color: 'red'
+      },
+      {
+        name: 'Instagram',
+        link: 'https://www.instagram.com/vagaspelomundo/',
         icon: 'mdi-instagram',
         color: 'purple'
       },

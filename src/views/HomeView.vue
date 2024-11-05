@@ -1,24 +1,24 @@
 <script setup>
+const { user } = useAuth();
+import { useAuth } from '@/composables/useAuth';
 import AppSugerido from './appSugereido/AppSugerido.vue';
 import Influenciadores from './socialNetwork/SocialInfluenciadores.vue';
-import { useAuth } from '@/composables/useAuth';
-
-const { user } = useAuth();
+import AluguelImoveis  from './imoveis/AluguelImoveis.vue';
 
 </script>
 
 <template>
   <main>
-    <div class="d-flex justify-center align-center flex-column my-10">
+    <div class="d-flex justify-center align-center flex-column">
       <div v-if="user">
         <p>Bem Vindo {{ user?.displayName.split(" ")[0] }} estamos trabalhando para lhe entregar recursos personalisados
         </p>
       </div>
-      <p class="text-center">Comunidade Brasileira em Braga!</p>
     </div>
-    <div class="d-flex justify-center align-center flex-column ga-8 ">
+    <div class="d-flex justify-center align-center flex-column ga-8 text-center">
       <AppSugerido />
       <Influenciadores />
+      <AluguelImoveis />
     </div>
   </main>
 </template>
