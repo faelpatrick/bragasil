@@ -33,11 +33,10 @@ const activeSlide = ref(0); // Slide atual
 
 // Lista de socials recomendados
 const socials = ref([
-
   {
     name: 'Casal Buscapé',
     category: 'Dicas',
-    icon: './public/imagens/social/casalbuscape.jpg',
+    icon: './imagens/social/casalbuscape.jpg',
     description: 'Canal de dicas de Portugal',
     midiasSociais: [
       {
@@ -57,7 +56,7 @@ const socials = ref([
   {
     name: 'Gustavo Luna 🇵🇹 ',
     category: 'Vlog',
-    icon: './public/imagens/social/gustavoluna.jpg',
+    icon: '/imagens/social/gustavoluna.jpg',
     description: 'Vlog Imigração',
     midiasSociais: [
       {
