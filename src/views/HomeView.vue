@@ -17,8 +17,8 @@ import AluguelImoveis  from './imoveis/AluguelImoveis.vue';
     </div>
     <div class="d-flex justify-center align-center flex-column ga-8 text-center">
       <AppSugerido />
-      <Influenciadores />
       <AluguelImoveis />
+      <Influenciadores />
     </div>
   </main>
 </template>
