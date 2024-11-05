@@ -76,7 +76,7 @@ const socials = ref([
   {
     name: 'Mayan Xavier',
     category: 'Vlog',
-    icon: './public/imagens/social/mayan_xavierr.jpg',
+    icon: './imagens/social/mayan_xavierr.jpg',
     description: 'Vlog Imigrante Brasileiro em Portugal',
     midiasSociais: [
       {
