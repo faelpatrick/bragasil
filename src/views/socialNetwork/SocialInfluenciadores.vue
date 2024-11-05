@@ -120,6 +120,32 @@ const socials = ref([
     ]
   },
   {
+    name: 'Faelpatrick',
+    category: 'Vlog',
+    icon: '/imagens/social/faelpatrick.jpg',
+    description: 'Canal de dicas de Informática',
+    midiasSociais: [
+      {
+        name: 'YouTube',
+        link: 'https://www.youtube.com/faelpatrick',
+        icon: 'mdi-youtube',
+        color: 'red'
+      },
+      {
+        name: 'Instagram',
+        link: 'https://www.instagram.com/faelpatricks',
+        icon: 'mdi-instagram',
+        color: 'purple'
+      },
+      {
+        name: 'TikTok',
+        link: 'https://www.tiktok.com/@faelpatrick',
+        icon: 'nav:tiktok',
+        color: 'white'
+      }
+    ]
+  },
+  {
     name: 'Tio Maicon / Portugal Diários',
     category: 'Dicas',
     icon: 'https://yt3.googleusercontent.com/ytc/AIdro_kIici6P04CIVb0cm5EQzF2jgpAbDk1NI16R_gqSbq7BS3v=s160-c-k-c0x00ffffff-no-rj',
