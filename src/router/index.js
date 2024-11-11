@@ -1,22 +1,28 @@
 import { createRouter, createWebHistory } from 'vue-router'
+import { onAuthStateChanged } from 'firebase/auth'; 
+import { auth } from '@/plugins/firebase'
 import HomeView from '../views/HomeView.vue'
 import Login from '@/views/login/LoginFirebase.vue'
 import Logout from '@/views/login/LogoutFirebase.vue'
+import Testes from '@/views/testes/PaginaTestes.vue'
 
-const router = createRouter({
-  history: createWebHistory(import.meta.env.BASE_URL),
-  routes: [
+const routes = [
     {
       path: '/',
       name: 'home',
       component: HomeView
     },
     {
+      path: '/testes',
+      name: 'testes',
+      component: Testes,
+      meta: {
+        requiresAuth: true
+      }
+    },
+    {
       path: '/about',
       name: 'about',
-      // route level code-splitting
-      // this generates a separate chunk (About.[hash].js) for this route
-      // which is lazy-loaded when the route is visited.
       component: () => import('../views/AboutView.vue')
     },
     {
@@ -31,6 +37,29 @@ const router = createRouter({
       component: Logout
     }
   ]
-})
+
+
+const router = createRouter({
+  history: createWebHistory(),
+  routes,
+});
+
+router.beforeEach((to, from, next) => {
+
+  if (to.matched.some(record => record.meta.requiresAuth)) {
+    onAuthStateChanged(auth, (user) => {
+      console.log('Usuário:', auth);
+  
+      if (user && user.email === 'faelpatrick@gmail.com') {
+        next();
+      } else {
+        alert("Acesso negado. Faça login com o usuário autorizado.");
+        next({ path: '/login' }); // Substitua '/login' pelo caminho da sua página de login
+      }
+    });
+  } else {
+    next(); // Se a rota não requer autenticação, permite o acesso
+}
+});
 
 export default router
