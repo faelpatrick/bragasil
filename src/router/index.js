@@ -50,7 +50,7 @@ router.beforeEach((to, from, next) => {
     onAuthStateChanged(auth, (user) => {
       console.log('Usuário:', auth);
   
-      if (user && user.email === 'faelpatrick@gmail.com') {
+      if (user && user.email === import.meta.env.VUE_APP_USER_EMAIL) {
         next();
       } else {
         alert("Acesso negado. Faça login com o usuário autorizado.");
