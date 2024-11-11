@@ -5,7 +5,7 @@ import HomeView from '../views/HomeView.vue'
 import Login from '@/views/login/LoginFirebase.vue'
 import Logout from '@/views/login/LogoutFirebase.vue'
 import Testes from '@/views/testes/PaginaTestes.vue'
-import process from 'dotenv'
+
 
 const routes = [
     {
@@ -45,9 +45,9 @@ const router = createRouter({
   routes,
 });
 
-//import emal from dotenv
 
-const adminMail = process.env.VUE_APP_ADMIN_EMAIL;
+const adminMail = import.meta.env.VUE_APP_ADMIN_EMAIL;
+console.log('Admin Email:', adminMail);
 
 router.beforeEach((to, from, next) => {
 
