@@ -5,6 +5,7 @@ import HomeView from '../views/HomeView.vue'
 import Login from '@/views/login/LoginFirebase.vue'
 import Logout from '@/views/login/LogoutFirebase.vue'
 import Testes from '@/views/testes/PaginaTestes.vue'
+import process from 'dotenv'
 
 const routes = [
     {
@@ -44,13 +45,17 @@ const router = createRouter({
   routes,
 });
 
+//import emal from dotenv
+
+const adminMail = process.env.VUE_APP_ADMIN_EMAIL;
+
 router.beforeEach((to, from, next) => {
 
   if (to.matched.some(record => record.meta.requiresAuth)) {
     onAuthStateChanged(auth, (user) => {
       console.log('Usuário:', auth);
   
-      if (user && user.email === import.meta.env.VUE_APP_USER_EMAIL) {
+      if (user && user.email === adminMail) {
         next();
       } else {
         alert("Acesso negado. Faça login com o usuário autorizado.");
